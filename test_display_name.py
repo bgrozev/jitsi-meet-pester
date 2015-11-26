@@ -3,10 +3,6 @@ from selenium.webdriver import ActionChains
 from pester import current_fixture
 import utils
 
-#Implement this if the tests need to be ordered:
-#@nottest
-#def get_tests():
-#    return [test_display_name2, test_display_name1, test_display_name3]
 
 def check_display_name_locally(name):
     second_participant = current_fixture.get_second_participant()
