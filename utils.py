@@ -21,6 +21,8 @@ def wait_for_boolean(driver, script, timeout=10):
 def wait_for_ice(driver):
     wait_for_boolean(driver, ICE_CONNECTED_CHECK_JS)
 
+def noop():
+    pass
 
 def change_display_name(driver, name):
     driver.find_element_by_xpath(

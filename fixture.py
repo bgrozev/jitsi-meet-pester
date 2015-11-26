@@ -8,16 +8,16 @@ class PesterFixture:
                  url_base="https://beta.meet.jit.si/",
                  browsers=('chrome', 'chrome'),
                  url=''):
+        if url:
+            self.url = url
+        else:
+            self.url = url_base + "pester" + str(random.random())[2:]
+
         self.drivers = []
         self.browsers = []
         for browser in browsers:
             self.browsers.append(browser)
             self.drivers.append(driver_factory.create_driver(browser))
-
-        if url:
-            self.url = url
-        else:
-            self.url = url_base + "pester" + str(random.random())[2:]
         print('Creating a fixture; url=' + self.url + '; browsers=' +
               str(browsers))
 
@@ -39,7 +39,7 @@ class PesterFixture:
         driver.get(url)
         utils.wait_for_ice(driver)
 
-    def quit_all(self):
+    def close_all(self):
         for driver in self.drivers:
             driver.quit()
 
