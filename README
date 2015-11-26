@@ -1,0 +1,9 @@
+Slightly annoy a Jitsi-Meet installation by running automated tests against it.
+
+
+Requirements:
+chrome/chromium, chromedriver
+pip install nose nose-htmloutput nose-testconfig
+
+Running:
+nosetests-3.4 pester.py  --with-html
